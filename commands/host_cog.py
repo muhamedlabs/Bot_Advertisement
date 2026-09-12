@@ -30,26 +30,26 @@ class HostInfo(commands.Cog):
         library_version = __import__(library_name).__version__
 
         container = disnake.ui.Container(
-            disnake.ui.TextDisplay("## Информация о хостинге и боте"),
+            disnake.ui.TextDisplay("# ● Информация о хостинге и боте"),
             disnake.ui.TextDisplay(
                 "> **Server Muhameda** — место, где ваши проекты работают 24/7. "
                 "Хостинг для Discord-ботов, приложений и игровых сервисов с удобным "
                 "управлением и стабильной инфраструктурой."
             ),
             disnake.ui.Separator(),
-            disnake.ui.TextDisplay("### Хостинг"),
+            disnake.ui.TextDisplay("## • Хостинг"),
             disnake.ui.TextDisplay(
                 f"**Хост:** {HOST_NAME}\n"
                 f"**Локация:** {HOST_LOCATION}\n"
                 f"**Аптайм:** `{hours}ч {minutes}м {seconds}с`\n"
                 f"**Пинг:** `{round(self.bot.latency * 1000)} мс`\n"
-                f"**Статус:** Стабильно работает"
+                f"**Статус:** Стабильно работает\n"
+                f"**Разработчик:** {BOT_DEVELOPER}"
             ),
             disnake.ui.Separator(),
-            disnake.ui.TextDisplay("### Бот"),
+            disnake.ui.TextDisplay("## • Бот"),
             disnake.ui.TextDisplay(
                 f"**Название:** {self.bot.user.display_name}\n"
-                f"**Разработчик:** {BOT_DEVELOPER}\n"
                 f"**Библиотека:** {library_name} `{library_version}`\n"
                 f"**Python:** `{platform.python_version()}`\n"
                 f"**Серверов:** `{len(self.bot.guilds)}`\n"
