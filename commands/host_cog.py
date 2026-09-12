@@ -12,7 +12,7 @@ HOST_NAME = "ServerMuhameda - Приватный VPS сервер"
 HOST_LOCATION = "Где-то на этой планете земля"
 HOST_IMAGE = "https://i.ibb.co/HDdmH3xS/image.png"
 HOST_LINK = "https://server.muhamedlabs.pro"
-DEVELOPER = "Андрей Мухамед (admirall_times)"
+BOT_DEVELOPER = "Андрей Мухамед (admirall_times)"
 
 
 class HostInfo(commands.Cog):
@@ -30,26 +30,26 @@ class HostInfo(commands.Cog):
         library_version = __import__(library_name).__version__
 
         container = disnake.ui.Container(
-            disnake.ui.TextDisplay("# ● Информация о хостинге и боте"),
+            disnake.ui.TextDisplay("## Информация о хостинге и боте"),
             disnake.ui.TextDisplay(
                 "> **Server Muhameda** — место, где ваши проекты работают 24/7. "
                 "Хостинг для Discord-ботов, приложений и игровых сервисов с удобным "
                 "управлением и стабильной инфраструктурой."
             ),
             disnake.ui.Separator(),
-            disnake.ui.TextDisplay("### • О хостинге:"),
+            disnake.ui.TextDisplay("### Хостинг"),
             disnake.ui.TextDisplay(
                 f"**Хост:** {HOST_NAME}\n"
                 f"**Локация:** {HOST_LOCATION}\n"
                 f"**Аптайм:** `{hours}ч {minutes}м {seconds}с`\n"
                 f"**Пинг:** `{round(self.bot.latency * 1000)} мс`\n"
-                f"**Статус:** Стабильно работает\n"
-                f"**Разработчик:** {DEVELOPER}"
+                f"**Статус:** Стабильно работает"
             ),
             disnake.ui.Separator(),
-            disnake.ui.TextDisplay("### • О боте:"),
+            disnake.ui.TextDisplay("### Бот"),
             disnake.ui.TextDisplay(
                 f"**Название:** {self.bot.user.display_name}\n"
+                f"**Разработчик:** {BOT_DEVELOPER}\n"
                 f"**Библиотека:** {library_name} `{library_version}`\n"
                 f"**Python:** `{platform.python_version()}`\n"
                 f"**Серверов:** `{len(self.bot.guilds)}`\n"
@@ -58,7 +58,7 @@ class HostInfo(commands.Cog):
             disnake.ui.MediaGallery(disnake.MediaGalleryItem(HOST_IMAGE)),
             disnake.ui.Separator(),
             disnake.ui.TextDisplay(
-                f"-# © 2028 Спасибо, что выбрали наш хост! [Перейти на сайт хостинга.]({HOST_LINK})"
+                f"-# Спасибо, что выбрали наш хост! [Перейти на сайт хостинга.]({HOST_LINK})"
             ),
             accent_colour=self.embed_color,
         )
@@ -71,3 +71,4 @@ class HostInfo(commands.Cog):
 
 def setup(bot: commands.Bot):
     bot.add_cog(HostInfo(bot))
+    print("Ког HostInfo (команда /host) успешно загружен")
