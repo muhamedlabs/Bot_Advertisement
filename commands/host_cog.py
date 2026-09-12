@@ -12,7 +12,7 @@ HOST_NAME = "ServerMuhameda - Приватный VPS сервер"
 HOST_LOCATION = "Где-то на этой планете земля"
 HOST_IMAGE = "https://i.ibb.co/HDdmH3xS/image.png"
 HOST_LINK = "https://server.muhamedlabs.pro"
-BOT_DEVELOPER = "Андрей Мухамед (admirall_times)"
+DEVELOPER = "Андрей Мухамед (admirall_times)"
 
 
 class HostInfo(commands.Cog):
@@ -37,17 +37,17 @@ class HostInfo(commands.Cog):
                 "управлением и стабильной инфраструктурой."
             ),
             disnake.ui.Separator(),
-            disnake.ui.TextDisplay("## • Хостинг"),
+            disnake.ui.TextDisplay("### • О хостинге:"),
             disnake.ui.TextDisplay(
                 f"**Хост:** {HOST_NAME}\n"
                 f"**Локация:** {HOST_LOCATION}\n"
                 f"**Аптайм:** `{hours}ч {minutes}м {seconds}с`\n"
                 f"**Пинг:** `{round(self.bot.latency * 1000)} мс`\n"
                 f"**Статус:** Стабильно работает\n"
-                f"**Разработчик:** {BOT_DEVELOPER}"
+                f"**Разработчик:** {DEVELOPER}"
             ),
             disnake.ui.Separator(),
-            disnake.ui.TextDisplay("## • Бот"),
+            disnake.ui.TextDisplay("### • О боте:"),
             disnake.ui.TextDisplay(
                 f"**Название:** {self.bot.user.display_name}\n"
                 f"**Библиотека:** {library_name} `{library_version}`\n"
@@ -58,7 +58,7 @@ class HostInfo(commands.Cog):
             disnake.ui.MediaGallery(disnake.MediaGalleryItem(HOST_IMAGE)),
             disnake.ui.Separator(),
             disnake.ui.TextDisplay(
-                f"-# Спасибо, что выбрали наш хост! [Перейти на сайт хостинга.]({HOST_LINK})"
+                f"-# © 2028 Спасибо, что выбрали наш хост! [Перейти на сайт хостинга.]({HOST_LINK})"
             ),
             accent_colour=self.embed_color,
         )
